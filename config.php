@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://opencart.domain/');
+define('HTTP_SERVER', '/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://opencart.domain/');
+define('HTTPS_SERVER', '/');
 
 // DIR
 define('DIR_APPLICATION', '/Users/Sergey/Documents/sites/OpenCart/catalog/');

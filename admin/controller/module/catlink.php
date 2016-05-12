@@ -145,28 +145,21 @@ class ControllerModuleCatlink extends Controller {
     
     private function update_links() //Обновляем привязки товаров по категориям
     {
-        $query = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
-        foreach($query->rows as $rule)
+        $rules = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
+        $categories = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category");
+        $query = $this->db->query("TRUNCATE ".DB_PREFIX."product_to_category");
+        foreach($rules->rows as $rule)
         {
-            $products = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id = ".$rule['category_id']);
-            $products_sec = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id = ".$rule['second_category_id']);
-            foreach($products->rows as $first_cat_product)
+            foreach($categories->rows as $category)
             {
-                $key = false;
-                foreach($products_sec->rows as $second_cat_product)
+                if(($category['category_id'] == $rule['category_id']) or ($category['category_id'] == $rule['second_category_id']))
                 {
-                    if(($first_cat_product['category_id'] == $rule['category_id']) and ($second_cat_product['category_id'] == $rule['second_category_id']))
+                    $query = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id =".$category['category_id']." AND product_id = ".$category['product_id']);
+                    if(count($query->rows) <= 0)
                     {
-                        
-                        $key = true;
-                        break;
+                        $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['category_id'].", ".$category['main_category'].") ");
+                        $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['second_category_id'].", ".$category['main_category'].") ");
                     }
-                }
-                
-                if($key == false)
-                {
-                    echo $rule['second_category_id'];
-                    $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category (`product_id`, `category_id`, `main_category`) VALUES(".$second_cat_product['product_id'].", ".$rule['second_category_id'].", ".$rule['parent_category_id'].")");
                 }
             }
         }
