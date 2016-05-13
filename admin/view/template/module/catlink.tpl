@@ -27,7 +27,7 @@
         <table id="module" class="list">
           <thead>
             <tr style="background-color: rgb(244, 244, 248);">
-              <td class="left"><?php echo $category; ?></td>
+              <td class="left"><?php echo $category_title; ?></td>
               <td class="left"><?php echo $parent_category; ?></td>
               <td class="left"><?php echo $second_category; ?></td>
             </tr>
@@ -71,26 +71,31 @@
         
         
         <h2><?php echo $load_rules; ?></h2>
-        <table id="module" class="list">
-          <thead>
-            <tr style="background-color: rgb(244, 244, 248);">
-              <td class="left"><?php echo $category; ?></td>
-              <td class="left"><?php echo $parent_category; ?></td>
-              <td class="left"><?php echo $name_category; ?></td>
-              <td class="left"><?php echo $second_category; ?></td>
-            </tr>
-          </thead>
-          <tbody id="module-row0">
+              <?php if(isset($rules)): ?>
                 <?php foreach($rules as $rule): ?>
+                <table id="module" class="list">
+                  <thead>
+                    <tr style="background-color: rgb(244, 244, 248);">
+                      <td class="left"><?php echo $category_title; ?></td>
+                      <td class="left"><?php echo $parent_category; ?></td>
+                      <td class="left"><?php echo $name_category; ?></td>
+                      <td class="left"><?php echo $second_category; ?></td>
+                    </tr>
+                  </thead>
+                  <tbody id="module-row0">
                     <tr>
                       <td class="left"><?php echo $rule['category']; ?></td>
                       <td class="left"><?php echo $rule['parent_category']; ?></td>
                       <td class="left"><?php echo $rule['name']; ?></td>
                       <td class="left"><?php echo $rule['second_category']; ?></td>
                     </tr>
+                    </tbody>
+                </table>
                 <?php endforeach; ?>
-          </tbody>
-        </table>
+              <?php else: ?>
+                    <div class="warning"><?php echo $not_have_rules; ?></div>
+              <?php endif; ?>
+          
         
     </div>
   </div>

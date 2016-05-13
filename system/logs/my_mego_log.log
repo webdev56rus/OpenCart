@@ -1,51 +1,27 @@
-2016-05-12 21:43:17 - PHP Notice:  Undefined variable: second_cat_product in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 169
-2016-05-12 21:43:17 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 31, 27)' at line 1<br />Error No: 1064<br />INSERT INTO oc_product_to_category (`product_id`, `category_id`, `main_category`) VALUES(, 31, 27) in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 21:43:34 - PHP Notice:  Undefined variable: second_cat_product in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 169
-2016-05-12 21:43:34 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 31, 27)' at line 1<br />Error No: 1064<br />INSERT INTO oc_product_to_category (`product_id`, `category_id`, `main_category`) VALUES(, 31, 27) in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 21:45:46 - PHP Notice:  Undefined variable: second_cat_product in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 169
-2016-05-12 21:45:46 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 31, 27)' at line 1<br />Error No: 1064<br />INSERT INTO oc_product_to_category (`product_id`, `category_id`, `main_category`) VALUES(, 31, 27) in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 21:46:08 - PHP Notice:  Undefined variable: second_cat_product in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 169
-2016-05-12 21:46:08 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 31, 27)' at line 1<br />Error No: 1064<br />INSERT INTO oc_product_to_category (`product_id`, `category_id`, `main_category`) VALUES(, 31, 27) in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 21:46:35 - PHP Notice:  Error: Duplicate entry '41-31' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category (`product_id`, `category_id`, `main_category`) VALUES(41, 31, 27) in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 21:57:41 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
-2016-05-12 21:57:41 - PHP Warning:  Invalid argument supplied for foreach() in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 84
-2016-05-12 21:57:45 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
-2016-05-12 21:57:45 - PHP Warning:  Invalid argument supplied for foreach() in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 84
-2016-05-12 22:07:20 - PHP Notice:  Error: Unknown column 'id' in 'order clause'<br />Error No: 1054<br />SELECT * FROM oc_product_to_category ORDER BY id DESC in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:12:50 - PHP Notice:  Error: Duplicate entry '43-20' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(43, 20, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:13:02 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:02 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:02 - PHP Notice:  Error: Duplicate entry '28-20' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(28, 20, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:13:12 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:12 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:12 - PHP Notice:  Error: Duplicate entry '28-20' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(28, 20, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:13:17 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:17 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:13:17 - PHP Notice:  Error: Duplicate entry '28-20' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(28, 20, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:14:43 - PHP Notice:  Undefined variable: categoty in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 159
-2016-05-12 22:16:48 - PHP Notice:  Error: Duplicate entry '41-27' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(41, 27, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:19:02 - PHP Notice:  Error: Duplicate entry '41-27' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(41, 27, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:19:39 - PHP Notice:  Error: Duplicate entry '31-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(31, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:19:51 - PHP Notice:  Error: Duplicate entry '31-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(31, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:23:22 - PHP Notice:  Error: Duplicate entry '41-27' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(41, 27, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:24:21 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:27:35 - PHP Notice:  Undefined variable: ths in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 157
-2016-05-12 22:27:35 - PHP Notice:  Trying to get property of non-object in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 157
-2016-05-12 22:27:46 - PHP Notice:  Undefined index: id in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 157
-2016-05-12 22:27:46 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND product_id = 30' at line 1<br />Error No: 1064<br />SELECT * FROM oc_product_to_category WHERE category_id = AND product_id = 30 in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:29:54 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:30:10 - PHP Notice:  Error: Duplicate entry '41-27' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(41, 27, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:30:50 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:31:03 - PHP Notice:  Error: Duplicate entry '41-27' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(41, 27, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:31:51 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:31:59 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
-2016-05-12 22:32:03 - PHP Notice:  Error: Duplicate entry '30-33' for key 'PRIMARY'<br />Error No: 1062<br />INSERT INTO oc_product_to_category VALUES(30, 33, 0)  in /Users/Sergey/Documents/sites/OpenCart/system/database/mysql.php on line 50
+2016-05-13 9:17:25 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:17:25 - PHP Warning:  Invalid argument supplied for foreach() in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 84
+2016-05-13 9:18:28 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:19:26 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:19:26 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:19:49 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:19:49 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:20:02 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:20:02 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:20:18 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:20:18 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:20:29 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:20:29 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:20:34 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:20:34 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 96
+2016-05-13 9:20:49 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:20:49 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 94
+2016-05-13 9:21:05 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:21:05 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 94
+2016-05-13 9:21:11 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:21:11 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 94
+2016-05-13 9:22:11 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:22:11 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 94
+2016-05-13 9:22:12 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:22:12 - PHP Notice:  Undefined variable: not_have_rules in /Users/Sergey/Documents/sites/OpenCart/admin/view/template/module/CatLink.tpl on line 94
+2016-05-13 9:23:03 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62
+2016-05-13 9:23:52 - PHP Notice:  Undefined variable: data in /Users/Sergey/Documents/sites/OpenCart/admin/controller/module/catlink.php on line 62

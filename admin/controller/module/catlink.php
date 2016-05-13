@@ -73,11 +73,12 @@ class ControllerModuleCatlink extends Controller {
         $this->data['create_rule'] = $this->language->get('create_rule');
         $this->data['load_rules'] = $this->language->get('load_rules');
 
-        $this->data['category'] = $this->language->get('category');
+        $this->data['category_title'] = $this->language->get('category_title');
         $this->data['parent_category'] = $this->language->get('parent_category');
         $this->data['second_category'] = $this->language->get('second_category');
         $this->data['name_category'] = $this->language->get('name_category');
         $this->data['no_select'] = $this->language->get('no_select');
+        $this->data['not_have_rules'] = $this->language->get('not_have_rules');
 
  		if (isset($this->error['warning'])) {
 			$this->data['error_warning'] = $this->error['warning'];
