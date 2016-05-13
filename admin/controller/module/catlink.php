@@ -26,6 +26,7 @@ class ControllerModuleCatlink extends Controller {
         if(isset($this->request->post['category']))
         {
             $this->save_rule();
+            die();
             $this->data['message'] = $this->language->get('created_rule');
         }
         
@@ -63,8 +64,11 @@ class ControllerModuleCatlink extends Controller {
             $data[$count] = $categories;
             $count++;
         }
+        if(isset($data))
+        {
+            $this->data['rules'] = $data;
+        }
         
-        $this->data['rules'] = $data;
 
         
         //Заголовки и ошибки
@@ -86,6 +90,10 @@ class ControllerModuleCatlink extends Controller {
         $this->data['name_category'] = $this->language->get('name_category');
         $this->data['no_select'] = $this->language->get('no_select');
         $this->data['not_have_rules'] = $this->language->get('not_have_rules');
+        
+        
+        $this->data['no_select_category'] = $this->language->get('no_select_category');
+        $this->data['no_select_sec_category'] = $this->language->get('no_select_sec_category');
 
  		if (isset($this->error['warning'])) {
 			$this->data['error_warning'] = $this->error['warning'];
@@ -134,20 +142,21 @@ class ControllerModuleCatlink extends Controller {
     {
         if(isset($this->request->post['category']))
             $category = $this->request->post['category'];
-        if(isset($this->request->post['parent_category']))
-            $parent_category = $this->request->post['parent_category'];
         if(isset($this->request->post['second_category']))
             $second_category = $this->request->post['second_category'];
         $query = $this->db->query("SELECT * FROM ".DB_PREFIX."category_description WHERE category_id='".$category."' LIMIT 1");
         $category_name = $query->row['name'];
-        $query = $this->db->query("SELECT * FROM ".DB_PREFIX."category_description WHERE category_id='".$parent_category."' LIMIT 1");
-        if(count($query->row) > 0)
-            $parent_category_name = $query->row['name'];
-        $query = $this->db->query("SELECT * FROM ".DB_PREFIX."category_description WHERE category_id='".$second_category."' LIMIT 1");
-        if(count($query->row) > 0)
-            $second_category_name = $query->row['name'];
-        $name = $parent_category_name.'/'.$category_name.','.$second_category_name;
-        $query = $this->db->query("INSERT INTO ".DB_PREFIX."category_rules (`id`, `category_id`, `parent_category_id`, `name`, `second_category_id`) VALUES (NULL, $category, $parent_category, '".$name."', $second_category)"); 
+        $second_category_ids = explode(",", $second_category);
+        $category_names = array();
+        foreach($second_category_ids as $sec_id)
+        {
+            $query = $this->db->query("SELECT * FROM ".DB_PREFIX."category_description WHERE category_id='".$sec_id."' LIMIT 1");
+            if(count($query->row) > 0)
+                array_push($category_names, $query->row['name']);
+        }
+        $second_category_name = implode(",", $category_names);
+        $name = '/'.$category_name.','.$second_category_name;
+        $query = $this->db->query("INSERT INTO ".DB_PREFIX."category_rules (`id`, `category_id`, `parent_category_id`, `name`, `second_category_id`) VALUES (NULL, $category, 1, '".$name."', '".$second_category."')"); 
     }
     
     
@@ -156,15 +165,19 @@ class ControllerModuleCatlink extends Controller {
         $rules = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
         foreach($rules->rows as $rule)
         {
+            $rule['second_category_id'] = explode(",", $rule['second_category_id']);
             $categories = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id = ".$rule['category_id']);
             $categories = $categories->rows;
             foreach($categories as $category)
             {
-                $row = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id = ".$rule['second_category_id']. " and product_id = ".$category['product_id']);
-                $row = $row->rows;
-                if(count($row)<=0)
+                foreach($rule['second_category_id'] as $sec_id)
                 {
-                    $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['second_category_id'].", ".$category['main_category'].") ");
+                    $row = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category WHERE category_id = ".$sec_id. " and product_id = ".$category['product_id']);
+                    $row = $row->rows;
+                    if(count($row)<=0)
+                    {
+                        $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$sec_id.", ".$category['main_category'].") ");
+                    }
                 }
             }
         }

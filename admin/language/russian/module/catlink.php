@@ -19,6 +19,9 @@ $_['second_category']     = 'Дополнительная категория';
 $_['name_category']       = 'Имя категории';
 $_['no_select']           = 'Не выбрано';
 
+$_['no_select_category']  = 'Не выбрана категория';
+$_['no_select_sec_category']  = 'Не выбрана дополнительная категория';
+
 
 
 // Error
