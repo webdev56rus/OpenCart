@@ -146,7 +146,7 @@ class ControllerModuleCatlink extends Controller {
     
     private function update_links() //Обновляем привязки товаров по категориям
     {
-        $rules = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
+        /*$rules = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
         $categories = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category");
         $query = $this->db->query("TRUNCATE ".DB_PREFIX."product_to_category");
         foreach($rules->rows as $rule)
@@ -161,6 +161,44 @@ class ControllerModuleCatlink extends Controller {
                         $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['category_id'].", ".$category['main_category'].") ");
                         $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['second_category_id'].", ".$category['main_category'].") ");
                     }
+                }
+            }
+        }*/
+        
+        
+        $rules = $this->db->query("SELECT * FROM ".DB_PREFIX."category_rules ORDER BY id DESC");
+        foreach($rules->rows as $rule)
+        {
+            $categories = $this->db->query("SELECT * FROM ".DB_PREFIX."product_to_category");
+            $categories = $categories->rows;
+            foreach($categories as $category)
+            {
+                $key = false;
+                $second_key = false;
+                $row = array('product_id' => $category['product_id'], 'category_id' => $rule['category_id'],  'main_category' => $category['main_category']);
+                $second_row = array('product_id' => $category['product_id'], 'category_id' => $rule['second_category_id'],  'main_category' => $category['main_category']);
+                foreach($categories as $list)
+                {
+                    if($list['category_id'] == $row['category_id'] and $list['product_id'] == $row['product_id'])
+                    {
+                        $key == true;
+                        break;
+                    }
+                    if($list['category_id'] == $second_row['category_id'] and $list['product_id'] == $second_row['product_id'])
+                    {
+                        $second_key == true;
+                        break;
+                    }
+                }
+                
+                if($key == false)
+                {
+                    $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['category_id'].", ".$category['main_category'].") ");
+                }
+                
+                if($second_key == false)
+                {
+                    $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$rule['second_category_id'].", ".$category['main_category'].") ");
                 }
             }
         }
