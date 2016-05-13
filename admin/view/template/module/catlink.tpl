@@ -70,33 +70,37 @@
         </form>
         
         
-        <h2><?php echo $load_rules; ?></h2>
+            <h2><?php echo $load_rules; ?></h2>
               <?php if(isset($rules)): ?>
-                <?php foreach($rules as $rule): ?>
                 <table id="module" class="list">
-                  <thead>
-                    <tr style="background-color: rgb(244, 244, 248);">
-                      <td class="left"><?php echo $category_title; ?></td>
-                      <td class="left"><?php echo $parent_category; ?></td>
-                      <td class="left"><?php echo $name_category; ?></td>
-                      <td class="left"><?php echo $second_category; ?></td>
-                    </tr>
-                  </thead>
-                  <tbody id="module-row0">
+                    <thead>
+                        <tr style="background-color: rgb(244, 244, 248);">
+                            <td class="left"><?php echo $category_title; ?></td>
+                            <td class="left"><?php echo $parent_category; ?></td>
+                            <td class="left"><?php echo $name_category; ?></td>
+                            <td class="left"><?php echo $second_category; ?></td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody id="module-row0">
+                    <?php foreach($rules as $rule): ?>
                     <tr>
-                      <td class="left"><?php echo $rule['category']; ?></td>
-                      <td class="left"><?php echo $rule['parent_category']; ?></td>
-                      <td class="left"><?php echo $rule['name']; ?></td>
-                      <td class="left"><?php echo $rule['second_category']; ?></td>
+                        <td class="left"><?php echo $rule['category']; ?></td>
+                        <td class="left"><?php echo $rule['parent_category']; ?></td>
+                        <td class="left"><?php echo $rule['name']; ?></td>
+                        <td class="left"><?php echo $rule['second_category']; ?></td>
+                        <td class="left"><a href="" class="delete" id="<?php echo $rule['id']; ?>"><?php echo $delete; ?></a></td>
                     </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
-                <?php endforeach; ?>
               <?php else: ?>
                     <div class="warning"><?php echo $not_have_rules; ?></div>
               <?php endif; ?>
-          
         
+        <form action="" method="post" id="delete">
+            <input type="hidden" value="" name="delete_item">
+        </form>
     </div>
   </div>
 </div>
@@ -110,6 +114,19 @@ $(document).ready(function(){
     
     $('#create_links').click(function(){
         $(this).closest('form').submit();
+    });
+    
+    $('.delete').click(function(){
+        var id = $(this).attr('id');
+        $(this).closest('tr').slideDown(300).remove();
+        var url = document.location.href;
+        $.ajax({
+            url:url,
+            type:'post',
+            dataType:'text',
+            data:'delete_item='+id
+        });
+        return false;
     });
 });
 </script>
