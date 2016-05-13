@@ -176,7 +176,8 @@ class ControllerModuleCatlink extends Controller {
                     $row = $row->rows;
                     if(count($row)<=0)
                     {
-                        $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category VALUES(".$category['product_id'].", ".$sec_id.", ".$category['main_category'].") ");
+                        $query = $this->db->query("INSERT INTO ".DB_PREFIX."product_to_category (`product_id`, `category_id`, `main_category`)
+                        VALUES(".$category['product_id'].", ".$sec_id.", 0) ");
                     }
                 }
             }
